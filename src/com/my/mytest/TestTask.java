@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public abstract class TestTask extends AsyncTask<String, Integer, Integer>{
@@ -64,6 +66,13 @@ public abstract class TestTask extends AsyncTask<String, Integer, Integer>{
             ((TextView)mView.findViewById(R.id.item_result)).setBackgroundColor(0xFFFF0000);
             mView.setBackgroundColor(0xFFFFFFFF);
         }
+       int off1 = ( (LinearLayout)mView.getParent()).getMeasuredHeight();
+       int off2 = mView.getBottom();
+       int off3 = ( (ScrollView)mView.getParent().getParent()).getScrollY();
+       int off4 =  ( (ScrollView)mView.getParent().getParent()).getHeight();
+       Log.i("my","off1---:"+off1+" ---off2:"+off2+ "  off3 :"+off3);
+       if(off2 - off3 > off4-30)
+       ( (ScrollView)mView.getParent().getParent()).scrollBy(0, off4-60);
        
     }
     @Override  

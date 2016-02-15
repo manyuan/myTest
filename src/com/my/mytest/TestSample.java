@@ -13,7 +13,7 @@ public class TestSample extends TestTask{
 	protected Integer doInBackground(String... arg0) {
 		// TODO Auto-generated method stub
 		setinfo("heihei...2..");
-		try{Thread.sleep(2000);
+		try{Thread.sleep(1000);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
